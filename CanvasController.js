@@ -153,15 +153,13 @@ class CanvasController
     }
 
     compareNames(name1, name2) {
-        result = false
-        
         for (let i = 0; i < name1.length - name2.length + 1; i++) {
             if (name1.substring(i, i+name2.length) == name2) {
                 return true;
             }
         }
 
-        return result;
+        return false;
     }
 
     nextFoundIndi() {
