@@ -1,3 +1,22 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore"; 
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDPUVDe0IIedo9zNpJ46XNatp7TRoalmjg",
+  authDomain: "aushevtree.firebaseapp.com",
+  projectId: "aushevtree",
+  storageBucket: "aushevtree.appspot.com",
+  messagingSenderId: "705467037959",
+  appId: "1:705467037959:web:ec730cc3ebe3357de26da2",
+  measurementId: "G-KS07JJ5DT0"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getFirestore(app);
+
 let fileSelector = document.getElementById("file-selector");
 let canvas = document.getElementById("canvas");
 let drawTreeBtn = document.getElementById("drawTreeBtn");
@@ -68,7 +87,9 @@ function parse(input, familyTree) {
         if (text != undefined) {
             const lines = familyTree.splitOnLines(text);
             familyTree.setIndis(lines);
-            console.log(familyTree.indis.length);
+            const docRef = addDoc(collection(db, "Branches"), {
+                Text: text
+            });
         }
     }
 }
