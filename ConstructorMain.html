@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="Eo_circle_red_letter-a.svg.png" />
+    <title>Constructor</title>
+</head>
+<style>
+    body {
+        background-color: rgb(137, 137, 137);
+    }
+
+    #scaleSlider {
+        height: 98%;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+  
+    #newIndiNameInput {
+        position: fixed;
+        display: flex;
+        justify-content: first baseline;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: all 0.1s ease;
+        outline: none;
+        z-index: 100;
+        background: transparent;
+        border: none;
+    }
+
+    #readyBtn {
+        width: auto;
+        height: auto;
+        padding-top: 0%;
+    }
+</style>
+<body>
+    <div id="content">
+        <canvas id="canvas" width="0" height="0"></canvas>
+    </div>
+    <div id="scaleSlider">
+        <button id="toggleModeBtn">Готово</button>
+        <button id="saveBtn">Сохранить</button>
+        <input id="scale" type="range" class="slider" min="5" max="80" value="10">
+    </div>
+    <input id="newIndiNameInput" type="text" placeholder="Введите имя сына"></div>
+    <script src="Parameters.js"></script>
+    <script src="Indi.js"></script>
+    <script src="FamilyTree.js"></script>
+    <script src="TreeBuilder.js"></script>
+    <script src="CanvasControllerConstructor.js"></script>
+    <script src="ConstructorMain.js"></script>
+</body>
+</html>

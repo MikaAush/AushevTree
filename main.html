@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="Eo_circle_red_letter-a.svg.png" />
+    <title>Aushev</title>
+</head>
+<style>
+    #scaleSlider {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+    }
+
+    body {
+        background-color: rgb(132, 132, 132);
+    }
+
+    .indi_passive {
+        transition: all 0.2s ease;
+        transform: translateX(-100%);
+    }
+
+    .indi_active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: first baseline;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(105, 71, 113);
+        width: 30vh;
+        height: 100vh;
+        transition: all 0.2s ease;
+        transform: translateX(0%);
+        z-index: 100;
+    }
+
+    #indiName {
+        padding-top: 2vh;
+        color: rgb(255, 48, 210);
+        font-size:xx-large;
+    }
+
+    #indiId {
+        padding-top: 2vh;
+        color: rgb(150, 99, 139);
+        font-size:large;
+    }
+
+    #donwloadFamilyBtn {
+        padding-top: 10vh;
+        height: min-content;
+    }
+
+    #canvas {
+        margin: 0px;
+    }
+
+    .content_passive {
+        transition: all 0.2s ease;
+        left: auto;
+    }
+
+    .content_active {
+        transition: all 0.2s ease;
+        transform: translateX(272px);
+    }
+
+    #closeIndiBtn {
+        color: red;
+        font-size: small;
+        border-bottom: blueviolet;
+        display: inline-block;
+    }
+
+    #searchIndiContent {
+        position: fixed;
+        bottom: 40px;
+        right: 10px;
+    }
+</style>
+<body oncontextmenu="return false">
+    <div id="content">
+        <input type="file" id="file-selector" accept=".ged" style="color: rgb(0, 255, 94);position: relative;">
+        <button id="drawTreeBtn" style="height:20px;width:150px;">Отобразить дерево</button>
+        <canvas id="canvas" width="0" height="0"></canvas>
+    </div>
+    <div id="scaleSlider">
+        <input id="scale" type="range" class="slider" min="5" max="80" value="80">
+    </div>
+    <div id="searchIndiContent">
+        <input id="indiSearchInputName" type="text" placeholder="Имя человека">
+        <button id="nextFoundIndiBtn" class="nextFoundIndiBtn_passive">Следующий</button>
+    </div>
+    <div id="indi" class="indi_passive">
+        <div id="closeIndiBtn">Закрыть</div>
+        <div id="indiName">Неизвестно</div>
+        <div id="indiId">Неизвестно</div>
+        <button id="downloadFamilyBtn">Скачать ветку</button>
+        <button id="editFamilyBtn">Редактировать ветку</button>
+        <input type="file" id="updateBranchInput" data-buttonText="Обновить ветку" accept=".ged" style="color: rgb(0, 255, 94);position: relative;">
+    </div>
+    <script src="Parameters.js"></script>
+    <script src="Indi.js"></script>
+    <script src="CanvasController.js"></script>
+    <script src="FamilyTree.js"></script>
+    <script src="TreeBuilder.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
