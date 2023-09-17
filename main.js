@@ -99,5 +99,5 @@ function nextFoundIndi() {
 
 function openFamilyConstructor(ancestor) {
     localStorage.setItem('textForConstructor', familyTree.unloadBranchToFile(ancestor));
-    window.open('http://127.0.0.1:5500/ConstructorMain.html');
+    window.open('https://mikaaush.github.io/AushevTree/ConstructorMain.html');
 }
